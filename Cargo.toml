@@ -1,0 +1,32 @@
+[package]
+name = "lacs"
+version = "1.0.0"
+homepage = "https://github.com/Thompson6626/last-accessed-cli"
+description = "Simple CLI tool that displays files in a directory sorted by their last accessed time"
+repository = "https://github.com/Thompson6626/last-accessed-cli"
+license = "MIT"
+authors = ["Aaron Muñoz"]
+edition = "2021"
+include = [
+	"src/**/*",
+	"Cargo.toml"
+]
+keywords = [
+	"cli",
+	"directory"
+]
+categories = ["command-line-interface"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[dependencies]
+# -- Cli
+clap =  {version = "4.5.16", features = ["cargo"]}
+# -- File
+walkdir = "2.5.0"
+globset = "0.4.14"
+# -- Time
+chrono = "0.4.38"
+# -- Others
+derive_more = {version = "1.0.0", features = ["from", "display"]}
